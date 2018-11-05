@@ -20,11 +20,11 @@
             <a href="contact.php"><li><h3>Contact</h3></li></a>
         </menu>
 </div>
-		<form method="POST">
+		<div class="redeem">
+			<form method="POST">
 			num: <input	type="text" name="num" placeholder="Number" require value=" ">
-			<button name="ok" value="pn">OK</button>
+			<button name="ok" value="pn">Remdeem</button>
 		</form>
-		<div class="content">
 		 <?php
 			function conn(){
 				$conn = new mysqli("localhost", "root","", "tt");
@@ -44,6 +44,8 @@
 						Name : <?=$row['name']?>
 						<br> 
 						No. : <?=$row['num']?>
+						<br>
+						Point : <?=$row['star']?>
 					</p>
 					<?php 
 				}
