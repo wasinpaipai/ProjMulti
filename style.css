@@ -1,6 +1,4 @@
-body{
-    display: inline-block;
-}
+
 #menu {
     position: fixed;
     top: 0;
@@ -70,7 +68,7 @@ li:hover {
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 195px;
+    margin-top: 195pt;
     margin-bottom: 25px;
 }
 
@@ -101,4 +99,7 @@ li:hover {
 
 .icon:hover {
     filter: invert(100%);
+}
+.redeem{
+    margin-top: 150pt;
 }
