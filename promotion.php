@@ -23,7 +23,7 @@
 		<div class="redeem">
 			<form method="POST">
 			num: <input	type="text" name="num" placeholder="Number" require value=" ">
-			<button name="ok" value="pn">Remdeem</button>
+			<button name="ok" value="pn">Login</button>
 		</form>
 		 <?php
 			function conn(){
@@ -46,9 +46,54 @@
 						No. : <?=$row['num']?>
 						<br>
 						Point : <?=$row['star']?>
+						<form method="POST">
+							<input	type="hidden" name="star" value="<?=$row['star']?>">
+							<input type="hidden" name="id" value="<?=$row['id']?>">
+							<button name="ok" value="rd">Remdeem
+							</button>
+						</form>
 					</p>
-					<?php 
+					<?php
 				}
+			}
+			if ($_POST['ok'] == 'rd') {
+					$star=$_POST['star'];
+					$id=$_POST['id'];
+					echo $star; 
+					if ($star >= 10) {
+						//Show Drinks
+						echo "<br>Select your Drinks with the fade button and javascript animation";
+						//$drinks=namedrinks;
+						?>
+						<form method="POST">
+							<button name="ok" value="cf">Confirmm!!!
+							</button>
+							<input	type="hidden" name="star" value="<?= $star?>">
+							<input	type="hidden" name="id" value="
+							<?= $id?>">
+						</form>
+						<?php 
+							}
+						}
+			if ($_POST['ok'] == 'cf') 
+			{
+				// $star = $star-7;
+				$star=$_POST['star'];
+				$id=$_POST['id'];
+				echo "Star = ";
+				echo $star-10; ?>
+				<form method="POST">
+					<button name="ok" value="updatestar">ok</button>
+				</form>
+				<?php
+					$conn = conn();
+					$id = $_POST['id'];
+					$star = $_POST['star'];
+					$sql = "UPDATE phonenumber 
+					SET  star =  $star-10
+					WHERE  id = $id";
+					$conn->query($sql);
+					echo "Code: A5sfdD9;";
 			}
 		?>
 	</div>
