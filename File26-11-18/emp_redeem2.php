@@ -21,76 +21,78 @@
         </menu>
 	</div>
 	<div role="main" class="container">
-		<div class="redeem">
-			<?php
-			function conn(){
-				$conn = new mysqli("localhost", "root","", "tt");
-				return $conn;
-			}
-			if ($_POST['ok'] == 'rede') {
-				//Prepare data
-				$num = $_POST['num'];
-				//Insert Order
-				$conn = conn();
-				$sql = "SELECT * FROM phonenumber
-				WHERE num = $num";
-				$result = $conn->query($sql);
-				while($row = $result->fetch_assoc()) {
-				?>
-					<p>
-						Name : <?=$row['name']?>
-						<br> 
-						No. : <?=$row['num']?>
-						<br>
-						Point : <?=$row['star']?>
-					</p>
-						<form method="POST">
-							<input	type="hidden" name="star" value="<?=$row['star']?>">
-							<input type="hidden" name="id" value="<?=$row['id']?>">
-							<input type="hidden" name="code" value="<?$_POST['code']?>">
-							<input type="text" name="code">
-							<button name="ok" value="rd">Remdeem
-							</button>
-						</form>
-					<?php
+		<div class="card">
+			<div class="redeem">
+				<?php
+				function conn(){
+					$conn = new mysqli("localhost", "root","", "tt");
+					return $conn;
 				}
-			}
-			if ($_POST['ok'] == 'rd') {
-				$conn = conn();
-				$code=$_POST['code'];
-				$code_sql = "SELECT * FROM redeem WHERE re_code=$code";
-				$code_result = $conn->query($code_sql);
-				$code_row = $code_result->fetch_assoc();
-						if(!$code_row){
-						      echo "This code is Incorrect!";
-						 }else{
-										$star=$_POST['star'];
-										$id=$_POST['id'];
-										echo "Star = ";
-										echo $star-10; ?>
-										<?php
-											$conn = conn();
-											$id = $_POST['id'];
-											$star = $_POST['star'];
-											$sql = "UPDATE phonenumber 
-											SET  star =  $star-10
-											WHERE  id = $id";
-											$conn->query($sql);
-											$conn = conn();
-								$code_sql = "DELETE FROM redeem WHERE re_code=$code" ;
-								$conn->query($code_sql);
-											/*$code_sql ="DELETE FROM redeem WHERE re_code=$code"*/
-											// $conn->query($code_sql);
-
-							}
-							?>
+				if ($_POST['ok'] == 'rede') {
+					//Prepare data
+					$num = $_POST['num'];
+					//Insert Order
+					$conn = conn();
+					$sql = "SELECT * FROM phonenumber
+					WHERE num = $num";
+					$result = $conn->query($sql);
+					while($row = $result->fetch_assoc()) {
+					?>
+						<p>
+							Name : <?=$row['name']?>
 							<br> 
-							<button onclick="location.href='index.php'">Back to Homepage</button>
-							<?php
-						}
-		?>
-		
+							No. : <?=$row['num']?>
+							<br>
+							Point : <?=$row['star']?>
+						</p>
+							<form method="POST">
+								<input	type="hidden" name="star" value="<?=$row['star']?>">
+								<input type="hidden" name="id" value="<?=$row['id']?>">
+								<input type="hidden" name="code" value="<?$_POST['code']?>">
+								<input type="text" name="code">
+								<button name="ok" value="rd">Remdeem
+								</button>
+							</form>
+						<?php
+					}
+				}
+				if ($_POST['ok'] == 'rd') {
+					$conn = conn();
+					$code=$_POST['code'];
+					$code_sql = "SELECT * FROM redeem WHERE re_code=$code";
+					$code_result = $conn->query($code_sql);
+					$code_row = $code_result->fetch_assoc();
+							if(!$code_row){
+							      echo "This code is Incorrect!";
+							 }else{
+											$star=$_POST['star'];
+											$id=$_POST['id'];
+											echo "Star = ";
+											echo $star-10; ?>
+											<?php
+												$conn = conn();
+												$id = $_POST['id'];
+												$star = $_POST['star'];
+												$sql = "UPDATE phonenumber 
+												SET  star =  $star-10
+												WHERE  id = $id";
+												$conn->query($sql);
+												$conn = conn();
+									$code_sql = "DELETE FROM redeem WHERE re_code=$code" ;
+									$conn->query($code_sql);
+												/*$code_sql ="DELETE FROM redeem WHERE re_code=$code"*/
+												// $conn->query($code_sql);
 
+								}
+								?>
+								<br> 
+								<button onclick="location.href='index.php'">Back to Homepage</button>
+								<?php
+							}
+			?>
+			
+
+			</div>
 		</div>
 	</div>
 

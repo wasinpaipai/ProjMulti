@@ -21,15 +21,17 @@
         </menu>
     </div>
     <div role="main" class="container">
-		<div class="redeem">
-			<form method="POST" action="add_member2.php">
-			Name: <input type="text" name="name" value="">
-			<br>
-			Phone No.: <input	type="text" name="num" placeholder="Number"value="">
-			<br>
-			<button name="ok" value="pn">Submit</button>
-		</form>
-		</div>
+        <div class="card">
+    		<div class="redeem">
+    			<form method="POST" action="add_member2.php">
+    			Name: <input type="text" name="name" value="">
+    			<br>
+    			Phone No.: <input	type="text" name="num" placeholder="Number"value="">
+    			<br>
+    			<button name="ok" value="pn">Submit</button>
+    		</form>
+    		</div>
+        </div>
 	</div>
 
 	<script>

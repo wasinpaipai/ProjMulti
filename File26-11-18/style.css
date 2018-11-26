@@ -122,17 +122,20 @@ li:hover {
 
 /* Add some padding inside the card container */
 .redeem {
-    /*margin-top: 150pt;*/
-    padding: 70px 20px;
+    padding: 70px 85px;
     width: 40%;
-    margin: auto;
+}
 
+form{
+    font-size: 25px;
+}
+input{
+    width: 200px;
+    padding: 6px;
 }
 .login {
-    /*margin-top: 150pt;*/
-    padding: 70px 20px;
+    padding: 70px 85px;
     width: 40%;
-    margin: auto;
 
 }
 
@@ -154,5 +157,7 @@ li:hover {
 p {
     background-color: white;
     border: 0.1px solid #000000;
-    padding: 20px;
+    padding: 44px;
+    width: 180px;
+    margin-left: -25px;
 }

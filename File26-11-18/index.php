@@ -10,7 +10,6 @@
 <body style="font-family: 'Kanit', sans-serif;">
     <div id="menu">
         <div class="logo">
-            <a href="emp_login.php"><li><h3>Emp</h3></li></a>
             <img id="logo122" src="icon_122.jpg" align="middle">
         </div>
         <menu class="center">

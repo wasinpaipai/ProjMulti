@@ -21,6 +21,8 @@
         </menu>
     </div>
     <div role="main" class="container">
+    	<div class="card">
+    		<div class="login">
 		 <?php
 			function conn(){
 				$conn = new mysqli("localhost", "root","", "tt");
@@ -42,7 +44,6 @@
 					'$num'
 				)";
 				$conn->query($sql);
-				echo "success";
 
 					$num = $_POST['num'];
 					$conn = conn();
@@ -62,7 +63,8 @@
 				}
 			}
 		?>
-S
+	</div>
+	</div>
 	</div>
 
 	<script>
