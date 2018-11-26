@@ -21,12 +21,14 @@
         </menu>
 	</div>
 	<div role="main" class="container">
-		<div class="redeem">
-			<form method="POST" action="cus_redeem1.php">
-			num: <input	type="text" name="num">
-			<button name="ok" value="pn">Login</button>
-		</form>
-		</div>
+        <div class="card">
+    		<div class="redeem">
+    			<form method="POST" action="cus_redeem1.php">
+    			num: <input	type="text" name="num">
+    			<button name="ok" value="pn">Login</button>
+    		</form>
+    		</div>
+        </div>
 	</div>
 
 	<script>

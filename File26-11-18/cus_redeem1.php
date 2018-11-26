@@ -21,6 +21,7 @@
         </menu>
 	</div>
 	<div role="main" class="container">
+		<div class="card">
 		<div class="redeem">
 			<?php
 			function conn(){
@@ -43,13 +44,14 @@
 						No. : <?=$row['num']?>
 						<br>
 						Point : <?=$row['star']?>
+					</p>
 						<form method="POST">
 							<input	type="hidden" name="star" value="<?=$row['star']?>">
 							<input type="hidden" name="id" value="<?=$row['id']?>">
 							<button name="ok" value="rd">Remdeem
 							</button>
 						</form>
-					</p>
+					
 					<?php
 				}
 			}
@@ -57,10 +59,10 @@
 			if ($_POST['ok'] == 'rd') {
 					$star=$_POST['star'];
 					$id=$_POST['id'];
-					echo $star; 
+					echo '<p>',$star; 
 					if ($star >= 10) {
 						//Show Drinks
-						echo "<br>Select your Drinks with the fade button and javascript animation";
+						echo "<br>Select your Drinks with the fade button and javascript animation</p>";
 						//$drinks=namedrinks;
 						?>
 						<form method="POST">
@@ -77,17 +79,20 @@
 				// $star = $star-7;
 				$star=$_POST['star'];
 				$id=$_POST['id'];
-				echo "Star = ";
+				echo "<p>Star = ";
 				echo $star-10,'<br>';
 				$conn = conn();
 				$re_code=rand(10000,1000000);
 				$code_sql = "INSERT INTO redeem(re_code) VALUES('$re_code')" ;
 				$conn->query($code_sql);
-					echo "Code: ",$re_code;
+					echo "Code: ",$re_code,'<br></p>';
+					?>
+						<button onclick="location.href='index.php'">Back to Homepage</button>
+					<?php 
 			}
 		?>
-
 		</div>
+	</div>
 	</div>
 
 	<script>

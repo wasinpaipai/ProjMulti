@@ -21,18 +21,19 @@
         </menu>
     </div>
     <div role="main" class="container">
-
-    	<div class="login">
-    		<form method="POST" action="checklogin.php">
-			Usernamed: <input type="text" name="username">
-			<br>
-			Password: <input type="text" name="password">
-			<br>
-			<input type="submit" name="submit" value="login">
-		</form>
+        <div class="card">
+        	<div class="login">
+        		<form method="POST" action="checklogin.php">
+    			Usernamed: <input type="text" name="username">
+    			<br>
+    			Password: <input type="text" name="password">
+    			<br>
+                <br>
+    			<input type="submit" name="submit" value="login">
+    		</form>
+        	</div>
     	</div>
-	</div>
-
+    </div>
 	<script>
 		window.onscroll = function() {scrollFunction()};
 

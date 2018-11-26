@@ -43,6 +43,7 @@
 						No. : <?=$row['num']?>
 						<br>
 						Point : <?=$row['star']?>
+					</p>
 						<form method="POST">
 							<input	type="hidden" name="star" value="<?=$row['star']?>">
 							<input type="hidden" name="id" value="<?=$row['id']?>">
@@ -51,7 +52,6 @@
 							<button name="ok" value="rd">Remdeem
 							</button>
 						</form>
-					</p>
 					<?php
 				}
 			}

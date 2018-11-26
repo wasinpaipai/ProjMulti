@@ -104,8 +104,36 @@ li:hover {
 .icon:hover {
     filter: invert(100%);
 }
-.redeem{
-    margin-top: 150pt;
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    background-color: #E0E0E0;
+    transition: 0.3s;
+    width: 40%;
+    margin: auto;
+    border: 3px
+    padding: 10px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.redeem {
+    /*margin-top: 150pt;*/
+    padding: 70px 20px;
+    width: 40%;
+    margin: auto;
+
+}
+.login {
+    /*margin-top: 150pt;*/
+    padding: 70px 20px;
+    width: 40%;
+    margin: auto;
+
 }
 
 .logo {
@@ -122,4 +150,9 @@ li:hover {
 #logo122 {
     width: 7em;
     transition: width 0.5s;
+}
+p {
+    background-color: white;
+    border: 0.1px solid #000000;
+    padding: 20px;
 }

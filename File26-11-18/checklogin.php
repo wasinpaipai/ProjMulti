@@ -21,7 +21,8 @@
         </menu>
     </div>
     <div role="main" class="container">
-
+    	<div class="card">
+    		<div class="redeem">
     	<?php
 			function conn(){
 				$conn = new mysqli("localhost", "root","", "tt");
@@ -45,12 +46,14 @@
 										Username : <?=$row['username']?>
 										<br>
 									</p>
-									    <button onclick="location.href='emp_redeem.php'">redeem</button>
+									    <button onclick="location.href='emp_redeem.php'">Redeem</button>
 									    <button onclick="location.href='add_member1.php'">Add member</button>
 
 									<?php
 							}
 		?>
+	</div>
+</div>
 	</div>
 
 	<script>
